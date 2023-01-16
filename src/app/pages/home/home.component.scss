@@ -1,0 +1,7 @@
+:host{
+    display: block;
+}
+.caja{
+    display: grid;
+    grid-template: repeat(30, min-content)/repeat(5, 1fr);
+}
