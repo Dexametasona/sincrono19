@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
     for (let i=1; i<152; i++){
       this.BBDD.BD(String(i)).subscribe(x=>this.almacen.push(x))
     }
-
+    console.log(this.almacen)
   }
 
 }

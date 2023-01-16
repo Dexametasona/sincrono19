@@ -2,12 +2,9 @@
   <input type="text">
   <button></button>
 </div>
-<div>
+<div *ngFor="let x of almacen" class="caja">
   <div>
-    <img src="" alt="">
-    <p></p>
+    <img src={{x.sprites.front_shiny}}>
+    <p>{{x.forms[0].name}}</p>
   </div>
 </div>
-<pre>
-  {{almacen}}
-</pre>
