@@ -9,7 +9,7 @@ import { DataService } from 'src/app/service/data.service';
 })
 export class DetallesComponent implements OnInit {
   id!:string | null;
-  pokeDetail:any;
+  pokeDetail:any=[];
 
   regresar(){
     this.router.navigate(['/home'])
@@ -17,12 +17,13 @@ export class DetallesComponent implements OnInit {
   constructor(private BBDD:DataService, private router:Router, private route:ActivatedRoute) { }
   
   ngOnInit(): void {
+    let pokemon;
     this.id=this.route.snapshot.paramMap.get('id')
 
     if(this.id!=null){
-      this.BBDD.BD(this.id).subscribe(x=>this.pokeDetail=x)
+      this.BBDD.BD(this.id).subscribe(x=>this.pokeDetail.push(x))
+
     }
-    console.log(this.pokeDetail)
   }
 
 }

@@ -1,12 +1,17 @@
+<div>
+  <p *ngFor="let x of pokeDetail" class="flex flex-col">
+    <span>{{x.forms[0].name}}</span>
+  </p>
+</div>
 <div class="m-auto rounded-md border-2 border-gray-500 p-5 bg-yellow-500">
   <div>
-    <img src={{pokeDetail.sprites.front_shiny}}>
+    <img src={{pokeDetail[0]?.sprites.front_shiny}}>
   </div>
   <div class="text-2xl my-3">
-    <p>Nombre: {{pokeDetail.forms[0].name}}</p>
-    <p>habilidad 1: {{pokeDetail.abilities[0].ability.name}}</p>
-    <p>habilidad 2: {{pokeDetail.abilities[1].ability.name}}</p>
-    <p>Experiencia Base: {{pokeDetail.base_experience}}</p>
+    <p>Nombre: {{pokeDetail[0]?.forms[0].name}}</p>
+    <p>habilidad 1: {{pokeDetail[0]?.abilities[0].ability.name}}</p>
+    <p>habilidad 2: {{pokeDetail[0]?.abilities[1].ability.name}}</p>
+    <p>Experiencia Base: {{pokeDetail[0]?.base_experience}}</p>
   </div>
   <button (click)="regresar()" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">Regresar</button>
 </div>
