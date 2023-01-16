@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from 'src/app/service/data.service';
 
 @Component({
@@ -9,7 +10,10 @@ import { DataService } from 'src/app/service/data.service';
 export class HomeComponent implements OnInit {
   almacen:any=[]
 
-  constructor(private BBDD:DataService) { }
+  buscar(id:string){
+    this.route.navigate(['/detalles', id])
+  }
+  constructor(private BBDD:DataService, private route:Router, router:ActivatedRoute) { }
 
   ngOnInit(): void {
     for (let i=1; i<152; i++){

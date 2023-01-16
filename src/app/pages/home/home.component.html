@@ -1,6 +1,6 @@
-<div>
-  <input type="text">
-  <button></button>
+<div class="w-full">
+  <input type="text" class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" #search>
+  <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" (click)="buscar(search.value)">Buscar</button>
 </div>
 <div  class="caja">
   <div *ngFor="let x of almacen">

@@ -1,1 +1,12 @@
-<p>detalles works!</p>
+<div class="m-auto">
+  <div>
+    <img src={{pokeDetail.sprites.front_shiny}}>
+  </div>
+  <div>
+    <p>Nombre: {{pokeDetail.forms[0].name}}</p>
+    <p>habilidad 1: {{pokeDetail.abilities[0].ability.name}}</p>
+    <p>habilidad 2: {{pokeDetail.abilities[1].ability.name}}</p>
+    <p>Experiencia Base: {{pokeDetail.base_experience}}</p>
+  </div>
+  <button (click)="regresar()" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">Regresar</button>
+</div>
