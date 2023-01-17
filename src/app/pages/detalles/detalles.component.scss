@@ -1,3 +1,41 @@
 :host{
     display: flex;
+    position: relative;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.caja1{
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    z-index: -1;
+}
+.caja2{
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    z-index: -1;
+}
+.caja3{
+    display: grid;
+    grid-template: repeat(4, min-content)/repeat(2, 1fr);
+    .head, .boton{
+        grid-column: span 2;
+        height: 4rem;
+    }
+    .info{
+        display: grid;
+        grid-template:repeat(6, min-content)/repeat(2,1fr) ;
+        justify-self: center;
+        grid-column: span 2;
+        width: 70%;
+    }
+    img{
+        height: 150px;
+        width: 150px;
+    }
+    
 }

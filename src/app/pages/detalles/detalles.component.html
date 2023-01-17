@@ -1,17 +1,58 @@
-<div>
-  <p *ngFor="let x of pokeDetail" class="flex flex-col">
-    <span>{{x.forms[0].name}}</span>
-  </p>
-</div>
-<div class="m-auto rounded-md border-2 border-gray-500 p-5 bg-yellow-500">
-  <div>
-    <img src={{pokeDetail[0]?.sprites.front_shiny}}>
+<div class="caja1" [ngStyle]="{'background-color':pokemon.color1}"></div>
+<div class="caja2" [ngStyle]="{'background-color':pokemon.color2}"></div>
+<div class="w-1/2 bg-slate-200 caja3 text-xl pb-3 border-2 border-gray-500 rounded-md">
+  <div class="head text-4xl text-center font-bold" [ngStyle]="{'background-color':pokemon.color1}">
+    <p>{{pokemon.name | uppercase}}</p>
   </div>
-  <div class="text-2xl my-3">
-    <p>Nombre: {{pokeDetail[0]?.forms[0].name}}</p>
-    <p>habilidad 1: {{pokeDetail[0]?.abilities[0].ability.name}}</p>
-    <p>habilidad 2: {{pokeDetail[0]?.abilities[1].ability.name}}</p>
-    <p>Experiencia Base: {{pokeDetail[0]?.base_experience}}</p>
+  <div class="flex flex-col items-center">
+    <p>Version normal</p>
+    <img [src]='[pokemon.sprite]'>
   </div>
-  <button (click)="regresar()" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">Regresar</button>
-</div>
+  <div class="flex flex-col items-center">
+    <p>Version shiny</p>
+    <img [src]='[pokemon.spriteShiny]'>
+  </div>
+  <div class="info py-3">
+    <div>
+      <p class="font-bold">Tipo: </p>
+    </div>
+    <div class="flex">
+      <div class="w-1/2 text-white font-bold text-center" [ngStyle]="{'background-color':pokemon.color1}">{{pokemon.tipo1}}</div>
+      <div class="w-1/2 text-white font-bold text-center" [ngStyle]="{'background-color':pokemon.color2}">{{pokemon.tipo2}}</div>
+    </div>
+    <div>
+      <p class="font-bold">Peso: </p>
+    </div>
+    <div>
+      <p>{{pokemon.peso}}Kg.</p>
+    </div>
+    <div>
+      <p class="font-bold">Altura: </p>
+    </div>
+    <div>
+      <p>{{pokemon.height}}cm</p>
+    </div>
+    <div>
+      <p class="font-bold">Habilidad: </p>
+    </div>
+    <div>
+      <p>{{pokemon.habilidad}}</p>
+    </div>
+    <div>
+      <p class="font-bold">Movimiento 1: </p>
+    </div>
+    <div>
+      <p>{{pokemon.skill1}}</p>
+    </div>
+    <div>
+      <p class="font-bold">Movimiento 2: </p>
+    </div>
+    <div>
+      <p>{{pokemon.skill2}}</p>
+    </div>
+  </div>
+  <div class="boton flex justify-center items-center">
+    <button (click)="regresar()" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">Regresar</button>
+  </div>
+</div>  
+
