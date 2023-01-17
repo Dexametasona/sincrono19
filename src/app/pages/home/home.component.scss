@@ -1,7 +1,46 @@
 :host{
-    display: block;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 .caja{
     display: grid;
-    grid-template: repeat(30, min-content)/repeat(5, 1fr);
+    grid-template: repeat(50, min-content)/repeat(6, 1fr);
+}
+img{
+    height: 150px;
+    width: 150px;
+}
+.caratula{
+    background: linear-gradient(
+        rgba(0,0,0, .7),
+        rgba(0,0,0, .7)
+    ),
+    url('https://rare-gallery.com/uploads/posts/1178514-illustration-cartoon-Pok-mon-Pikachu-Pokemon-First-Generation-Toy-Charizard-Red-character-Blastoise.jpg');
+    background-size: cover;
+}
+.card{
+    position: relative;
+    transition: all 1.5s ease-in-out;
+    div:nth-child(1){
+        opacity: 40%;
+        position: absolute;
+        height: 100%;
+        width: 50%;
+        z-index: -1;
+    }
+    div:nth-child(2){
+        opacity: 40%;
+        position: absolute;
+        height: 100%;
+        width: 50%;
+        right: 0;
+        z-index: -1;
+    }
+    &:hover{
+        transform: rotate3d(0,1,0,1turn);
+    }
+    img{
+        cursor: pointer;
+    }
 }
